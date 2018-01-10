@@ -1,0 +1,19 @@
+{
+  "name": "testrestapi",
+  "version": "1.0.0",
+  "description": "RESTful API App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "vmcindy",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.14.10"
+  },
+  "dependencies": {
+    "express": "^4.16.2",
+    "mongoose": "^4.13.9"
+  }
+}

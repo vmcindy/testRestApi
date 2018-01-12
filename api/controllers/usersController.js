@@ -21,7 +21,7 @@ exports.create_user = function(req, res) {
 };
 
 exports.read_user = function(req, res) {
-    User.findById(req.params.userId, function(err, usr) {
+    User.findOne({id: req.params.userId}, function(err, usr) {
         if(err)
             res.send(err);
         res.json(usr);
@@ -29,7 +29,7 @@ exports.read_user = function(req, res) {
 };
 
 exports.update_user = function(req, res) {
-    User.findByIdAndUpdate({_id: req.params.userId}, req.body, {new: true}, function(err, usr) {
+    User.findOneAndUpdate({id: req.params.userId}, req.body, {new: true}, function(err, usr) {
         if(err)
             res.send(err);
         res.json(usr);
@@ -37,7 +37,7 @@ exports.update_user = function(req, res) {
 };
 
 exports.delete_user = function(req, res) {
-    User.remove({_id: req.params.userId}, function(err, usr) {
+    User.remove({id: req.params.userId}, function(err, usr) {
         if(err)
             res.send(err);
         res.json(usr);

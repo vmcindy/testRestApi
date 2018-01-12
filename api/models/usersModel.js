@@ -6,7 +6,7 @@ var Schema = mongoose.Schema;
 var GeoLocation = new Schema({
     lat: String,
     lng: String
-});
+},{ _id : false });
 
 var Address = new Schema({
     street: String,
@@ -14,23 +14,26 @@ var Address = new Schema({
     city: String,
     zipcode: String,
     geo: GeoLocation
-});
+},{ _id : false });
 
 var Company = new Schema({
     name: String,
     catchPhrase: String,
     bs: String
-});
+},{ _id : false });
 
-var users = new Schema({
-    id: Number,
+var User = new Schema({
+    id: {
+        type: Number,
+        required: 'Invalid ID. Each user record needs a valid Id.'
+    },
     name: String,
     username: String,
     email: String,
     address: Address,
     phone: String,
     website: String,
-    company: Company,
+    company: Company
 });
 
-module.exports = mongoose.model('users', users);
+module.exports = mongoose.model('users', User);

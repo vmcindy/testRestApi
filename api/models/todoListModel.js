@@ -3,6 +3,11 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
+var dayAndTime = new Schema({
+    day: String,
+    time: String
+});
+
 var todoListTasks = new Schema({
     name: {
         type: String,
@@ -18,7 +23,8 @@ var todoListTasks = new Schema({
             enum: ['pending', 'ongoing', 'completed']
         }],
         default: ['pending']
-    }
+    },
+    repeat: dayAndTime
 });
 
 module.exports = mongoose.model('todoList', todoListTasks);

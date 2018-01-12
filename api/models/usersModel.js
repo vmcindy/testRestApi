@@ -3,11 +3,17 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
+var GeoLocation = new Schema({
+    lat: String,
+    lng: String
+});
+
 var Address = new Schema({
     street: String,
     suite: String,
     city: String,
-    zipcode: String
+    zipcode: String,
+    geo: GeoLocation
 });
 
 var Company = new Schema({
@@ -17,16 +23,14 @@ var Company = new Schema({
 });
 
 var users = new Schema({
-    name: {
-        type: String,
-        required: 'Kindly enter the name of the user'
-    },
+    id: Number,
+    name: String,
     username: String,
     email: String,
     address: Address,
     phone: String,
     website: String,
-    company: Company
+    company: Company,
 });
 
 module.exports = mongoose.model('users', users);

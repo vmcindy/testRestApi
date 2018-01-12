@@ -6,19 +6,19 @@ bodyParser = require('body-parser');
 
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/Tododb'); 
+mongoose.connect('mongodb://localhost/jsonPlaceHolder'); 
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-var Task = require('./api/models/todoListModel');
-var User = require('./api/models/usersModel');
+// initializing db variables
+var users = require('./api/models/usersModel');
 
-var todoRoutes = require('./api/routes/todoListRoutes'); //importing route
-var usersRoutes = require('./api/routes/usersRoutes'); //importing route
+// importing route
+var usersRoutes = require('./api/routes/usersRoutes'); 
 
-usersRoutes(app); //register the route
-todoRoutes(app); //register the route
+// register the route
+usersRoutes(app); 
 
 app.listen(port);
 

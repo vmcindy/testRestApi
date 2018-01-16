@@ -12,4 +12,7 @@ module.exports = function(app) {
         .put(comments.update_comment)
         .delete(comments.delete_comment);
 
+    app.route('/posts/:postId/comments')
+        .get(comments.read_post_comments);
+
 };

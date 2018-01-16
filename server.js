@@ -15,16 +15,19 @@ app.use(bodyParser.json());
 var users = require('./api/models/usersModel');
 var posts = require('./api/models/postsModel');
 var comments = require('./api/models/commentsModel');
+var photos = require('./api/models/photosModel');
 
 // importing route
 var usersRoutes = require('./api/routes/usersRoutes');
 var postsRoutes = require('./api/routes/postsRoutes');
 var commentsRoutes = require('./api/routes/commentsRoutes');
+var photosRoutes = require('./api/routes/photosRoutes');
 
 // register the route
 usersRoutes(app);
 postsRoutes(app);
 commentsRoutes(app);
+photosRoutes(app);
 
 app.listen(port);
 

@@ -1,8 +1,8 @@
 var express = require('express'),
-app = express(),
-port = process.env.PORT || 3300,
-mongoose = require('mongoose'),
-bodyParser = require('body-parser');
+    app = express(),
+    port = process.env.PORT || 3300,
+    mongoose = require('mongoose'),
+    bodyParser = require('body-parser');
 
 // --- Mongoose instance connection url connection --- 
 mongoose.Promise = global.Promise;

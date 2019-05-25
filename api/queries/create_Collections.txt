@@ -1,0 +1,4 @@
+db.createCollection("posts");
+db.createCollection("comments");
+db.createCollection("users");
+db.createCollection("photos");
